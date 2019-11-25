@@ -46,5 +46,5 @@ public class Juego {
             JOptionPane.showMessageDialog(null,"Final del juego","NOTIFICACIÓN",JOptionPane.WARNING_MESSAGE);
             }
         
-
+// SOLUCIONAR CUANDO SE ACIERTA SIGUE CORRIENDO LOS INTENTOS NO FINALIZA
 }
