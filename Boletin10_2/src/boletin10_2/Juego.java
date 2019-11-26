@@ -40,6 +40,7 @@ public class Juego {
             }
              else if (diferencia >= 0){
                   JOptionPane.showMessageDialog(null,"Es la respuesta correcta","ENHORABUENA PREMIO",JOptionPane.INFORMATION_MESSAGE);
+                  break;
                 }
             
             } while(intentos>0 && respuesta != numero);
