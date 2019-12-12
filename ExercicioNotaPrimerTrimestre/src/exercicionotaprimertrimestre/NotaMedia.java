@@ -13,10 +13,10 @@ import java.util.Scanner;
  * 
  */
 public class NotaMedia {
-    private int teorico1;
-    private int teorico2;
-    private int practico;   
-    private int boletins;
+    private double teorico1, numero;
+    private double teorico2;
+    private double practico;   
+    private double boletins;
 Scanner sc=new Scanner(System.in);
     public NotaMedia() {
     }
@@ -27,57 +27,49 @@ Scanner sc=new Scanner(System.in);
         this.practico = practico;
         this.boletins = boletins;
     }
-    public int ValidarNota(){
+    public void validarNota(){
        
+        do{
+            System.out.println("Escribe la nota que tiene que ser entre 0 y 10");
+           sc.nextFloat();
+        }while(numero<0 || numero>10);
         
-        if(validacion>0 && validacion<=10){
-           
-        }
+    }
+     public void validarBoletin(){
+       
+        do{
+            System.out.println("Escribe el numero de boletines que has hecho entre 0 y 19");
+           sc.nextFloat();
+        }while(boletins<0 || boletins>19);
+        
     }
     
     public void MedTeorico(){
-        System.out.println("Nota del primer teorico");
-        int teorico1=sc.nextInt();
-        System.out.println("Nota del segundo teorico");
-        int teorico2=sc.nextInt();
-        System.out.println("Nota del practico");
-        int practico=sc.nextInt();
-        System.out.println("Cuantos boletines has hecho");
-        int boletins=sc.nextInt();
-        int Media = 0;
-        int MediaTotal;
-        String tecleo= "";
-       if(boletins>=16){
-             for(int i = 0;tecleo!="fin";i++){ 
+        int notaBoletines=0;
+        if(boletins>=17){
+          notaBoletines=2;
+         }else if(boletins>=13){
+             notaBoletines=1;
+         }else
+             notaBoletines=0;
+    }
+         
+public float notaMediaExames(){
+    System.out.println("Introduce a nota do examen teorico 1");
+    teorico1=validarNota();
+    System.out.println("Introduce a nota do examen teorico 2");
+    teorico2=validarNota();
+    System.out.println("Introduce a nota do examen practico");
+    practico=validarNota();
+    System.out.println("Boletines feitos");
+    boletins=validarBoletin();
+    notaMed =(((teorico1+teorico2)/2*0.4)+notaPractico*0.4+notaBoletins);   
+System.out.println("A nota media é: "+notaMedia);
+}
 
-         Media=(teorico1+teorico2)/2;
-            int practico1 = (int) (practico*0.4);
-                 int MediaTotal1 = (int) ((Media*0.4)+practico1)+2;
-                
-               System.out.println(MediaTotal1); 
-                 }}
-         if(boletins>=12 && boletins<18){
-                 for(int i = 0;tecleo!="fin";i++){ 
-
-         Media=(teorico1+teorico2)/2;
-                 
-             int practico1 = (int) (practico*0.4);
-                 int MediaTotal2 = (int) ((Media*0.4)+practico1)+1;
-                
-        System.out.println(MediaTotal2); 
-        }}
-         else if(boletins<8){
-                 for(int i = 0;tecleo!="fin";i++){ 
-
-         Media=(teorico1+teorico2)/2;
-                 
-              int practico1 = (int) (practico*0.4);
-       MediaTotal=(int) ((Media*0.4)+practico1);
-        System.out.println(MediaTotal); 
-         }
-         }
+}
     
-    }}
+} 
     
 
     
